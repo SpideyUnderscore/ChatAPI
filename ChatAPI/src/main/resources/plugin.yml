@@ -1,0 +1,10 @@
+name: ChatAPI
+version: '${project.version}'
+main: dev.spiderman.chatapi.ChatAPIMain
+api-version: 1.18
+prefix: ChatAPI
+authors: [Spiderman__]
+description: API for Chat System
+
+commands:
+  testcomp:
