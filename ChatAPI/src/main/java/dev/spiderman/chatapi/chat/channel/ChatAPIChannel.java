@@ -2,8 +2,8 @@ package dev.spiderman.chatapi.chat.channel;
 
 import dev.spiderman.chatapi.ChatAPIHandler;
 import dev.spiderman.chatapi.chat.message.ChatMessage;
-import dev.spiderman.chatapi.chat.message.modifier.filter.MessageFilter;
-import dev.spiderman.chatapi.chat.message.modifier.format.SnippetFormatter;
+import dev.spiderman.chatapi.chat.message.MessageFilter;
+import dev.spiderman.chatapi.chat.message.SnippetFormatter;
 import dev.spiderman.chatapi.chat.ChannelMeta;
 import net.md_5.bungee.api.chat.BaseComponent;
 import org.bukkit.entity.Player;
@@ -15,10 +15,12 @@ import java.util.function.Predicate;
 
 public class ChatAPIChannel {
 
-	private ChannelMeta meta;
+	private final ChannelMeta meta;
+	private boolean asDefault;
 
 	public ChatAPIChannel(@NotNull String name) {
 		this.meta = new ChannelMeta(name);
+		this.asDefault = false;
 	}
 
 	public ChatAPIChannel withAliases(String... aliases) {
@@ -55,8 +57,13 @@ public class ChatAPIChannel {
 		return this;
 	}
 
+	public ChatAPIChannel asDefault() {
+		this.asDefault = true;
+		return this;
+	}
+
 	public void register() {
-		ChatAPIHandler.getInstance().register(meta);
+		ChatAPIHandler.getInstance().registerChannel(meta, asDefault);
 	}
 
 }

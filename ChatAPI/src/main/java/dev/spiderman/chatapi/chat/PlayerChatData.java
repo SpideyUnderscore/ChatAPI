@@ -7,23 +7,23 @@ public class PlayerChatData {
 
 	private final Player player;
 
-	private ChatInputHandler chatMessageSendHandler;
+	private ChatInputHandler currentChannel;
 
 	public PlayerChatData(Player player) {
 		this.player = player;
-		this.chatMessageSendHandler = ChatAPI.getChannel("TEST");
+		this.currentChannel = ChatAPI.getDefaultChannel() == null ? ChatInputHandler.empty() : ChatAPI.getDefaultChannel();
 	}
 
 	public Player getPlayer() {
 		return player;
 	}
 
-	public ChatInputHandler getChatMessageSendHandler() {
-		return chatMessageSendHandler;
+	public ChatInputHandler getCurrentChannel() {
+		return currentChannel;
 	}
 
-	public void setChatMessageSendHandler(ChatInputHandler chatMessageSendHandler) {
-		this.chatMessageSendHandler = chatMessageSendHandler;
+	public void setCurrentChannel(ChatInputHandler currentChannel) {
+		this.currentChannel = currentChannel;
 	}
 
 }

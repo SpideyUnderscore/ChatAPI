@@ -6,4 +6,8 @@ public interface ChatInputHandler {
 
 	void sendMessage(Player sender, String message);
 
+	static ChatInputHandler empty() {
+		return (sender, message) -> {};
+	}
+
 }

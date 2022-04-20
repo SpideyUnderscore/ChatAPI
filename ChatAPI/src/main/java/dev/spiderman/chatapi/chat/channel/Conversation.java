@@ -1,4 +1,4 @@
-package dev.spiderman.chatapi.chat.conversation;
+package dev.spiderman.chatapi.chat.channel;
 
 import dev.spiderman.chatapi.chat.ChatInputHandler;
 import dev.spiderman.chatapi.chat.message.ChatMessage;

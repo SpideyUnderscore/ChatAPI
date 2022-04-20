@@ -3,6 +3,9 @@
 
 .src/main/java/dev/spiderman/chatapi/test/
 
+#temp
+.src/main/java/dev/spiderman/chatapi/chat/channel/Conversation.java
+
 *.iml
 *.ipr
 *.iws

@@ -1,6 +1,8 @@
-package dev.spiderman.chatapi.chat.message.modifier.filter;
+package dev.spiderman.chatapi.chat.message;
 
 public class StringReplacement {
+
+	public static final String PLACEHOLDER = "{ph}";
 
 	private String replacement;
 
@@ -14,7 +16,7 @@ public class StringReplacement {
 	}
 
 	public StringReplacement appendPlaceholder() {
-		this.replacement = this.replacement + "{ph}";
+		this.replacement = this.replacement + PLACEHOLDER;
 		return this;
 	}
 
@@ -23,13 +25,13 @@ public class StringReplacement {
 	}
 
 	public String getWith(char placeholder) {
-		return replacement.replaceAll("\\{ph}", String.valueOf(placeholder));
+		return replacement.replaceAll(PLACEHOLDER, String.valueOf(placeholder));
 	}
 
 	////////////////////////////////////////////////////////
 
 	public static StringReplacement replacingAll(String str) {
-		return new StringReplacement(str.replaceAll(".", "{ph}"));
+		return new StringReplacement(str.replaceAll(".", PLACEHOLDER));
 	}
 
 	public static StringReplacement of(String str) {

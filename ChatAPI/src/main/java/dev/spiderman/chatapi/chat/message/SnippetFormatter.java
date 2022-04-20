@@ -1,7 +1,5 @@
-package dev.spiderman.chatapi.chat.message.modifier.format;
+package dev.spiderman.chatapi.chat.message;
 
-import dev.spiderman.chatapi.chat.message.ChatMessage;
-import dev.spiderman.chatapi.chat.message.MessageSnippet;
 import dev.spiderman.chatapi.chat.message.snippetcontent.EmailContent;
 import dev.spiderman.chatapi.chat.message.snippetcontent.LinkContent;
 import net.md_5.bungee.api.ChatColor;

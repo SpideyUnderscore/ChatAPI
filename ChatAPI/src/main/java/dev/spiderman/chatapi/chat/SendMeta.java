@@ -1,9 +1,9 @@
 package dev.spiderman.chatapi.chat;
 
 import dev.spiderman.chatapi.chat.message.ChatMessage;
-import dev.spiderman.chatapi.chat.message.modifier.filter.MessageFilter;
-import dev.spiderman.chatapi.chat.message.modifier.format.MessageFormatter;
-import dev.spiderman.chatapi.chat.message.modifier.format.SnippetFormatter;
+import dev.spiderman.chatapi.chat.message.MessageFilter;
+import dev.spiderman.chatapi.chat.message.MessageFormatter;
+import dev.spiderman.chatapi.chat.message.SnippetFormatter;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.BaseComponent;
 import org.bukkit.entity.Player;

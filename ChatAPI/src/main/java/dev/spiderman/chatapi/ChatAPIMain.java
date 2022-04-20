@@ -1,10 +1,10 @@
 package dev.spiderman.chatapi;
 
 import dev.spiderman.chatapi.chat.channel.ChatAPIChannel;
-import dev.spiderman.chatapi.chat.message.modifier.filter.MessageFilter;
-import dev.spiderman.chatapi.chat.message.modifier.filter.StringReplacement;
-import dev.spiderman.chatapi.chat.message.modifier.format.MessageFormatter;
-import dev.spiderman.chatapi.chat.message.modifier.format.SnippetFormatter;
+import dev.spiderman.chatapi.chat.message.MessageFilter;
+import dev.spiderman.chatapi.chat.message.StringReplacement;
+import dev.spiderman.chatapi.chat.message.MessageFormatter;
+import dev.spiderman.chatapi.chat.message.SnippetFormatter;
 import dev.spiderman.chatapi.test.components.TestComponentCommand;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.ClickEvent;

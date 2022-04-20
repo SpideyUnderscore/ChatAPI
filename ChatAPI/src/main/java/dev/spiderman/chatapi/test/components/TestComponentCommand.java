@@ -2,8 +2,8 @@ package dev.spiderman.chatapi.test.components;
 
 import dev.spiderman.chatapi.chat.message.ChatMessage;
 import dev.spiderman.chatapi.chat.message.MessageBuilder;
-import dev.spiderman.chatapi.chat.message.modifier.filter.MessageFilter;
-import dev.spiderman.chatapi.chat.message.modifier.filter.StringReplacement;
+import dev.spiderman.chatapi.chat.message.MessageFilter;
+import dev.spiderman.chatapi.chat.message.StringReplacement;
 import dev.spiderman.chatapi.chat.message.MessageSnippet;
 import dev.spiderman.chatapi.chat.message.snippetcontent.TextContent;
 import net.md_5.bungee.api.ChatColor;

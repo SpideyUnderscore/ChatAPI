@@ -1,7 +1,7 @@
 package dev.spiderman.chatapi;
 
-import dev.spiderman.chatapi.chat.PlayerChatData;
 import dev.spiderman.chatapi.chat.ChannelMeta;
+import dev.spiderman.chatapi.chat.PlayerChatData;
 import dev.spiderman.chatapi.chat.channel.RegisteredChatAPIChannel;
 import org.bukkit.entity.Player;
 
@@ -17,13 +17,10 @@ public class ChatAPIHandler {
 	private final HashMap<UUID, PlayerChatData> playerChatDataHashMap = new HashMap<>();
 	private final List<RegisteredChatAPIChannel> registeredChannels = new ArrayList<>();
 
-	protected void safelyAddPlayer(Player player) {
-		if (playerChatDataHashMap.containsKey(player.getUniqueId())) {
-			return;
-		}
+	private RegisteredChatAPIChannel defaultChannel;
 
-		// TODO: other handler
-		playerChatDataHashMap.put(player.getUniqueId(), new PlayerChatData(player));
+	protected void safelyAddPlayer(Player player) {
+		playerChatDataHashMap.putIfAbsent(player.getUniqueId(), new PlayerChatData(player));
 	}
 
 	public PlayerChatData getPlayerChatData(Player player) {
@@ -38,8 +35,10 @@ public class ChatAPIHandler {
 		return instance;
 	}
 
-	public void register(ChannelMeta meta) {
-		registeredChannels.add(new RegisteredChatAPIChannel(meta));
+	public void registerChannel(ChannelMeta meta, boolean asDefault) {
+		RegisteredChatAPIChannel channel = new RegisteredChatAPIChannel(meta);
+		registeredChannels.add(channel);
+		if (asDefault) ChatAPI.setDefaultChannel(channel);
 	}
 
 	/////////////////////////////////////
@@ -50,4 +49,11 @@ public class ChatAPIHandler {
 		return registeredChannels;
 	}
 
+	public RegisteredChatAPIChannel getDefaultChannel() {
+		return defaultChannel;
+	}
+
+	public void setDefaultChannel(RegisteredChatAPIChannel defaultChannel) {
+		this.defaultChannel = defaultChannel;
+	}
 }

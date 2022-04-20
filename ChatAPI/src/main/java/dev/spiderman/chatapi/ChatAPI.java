@@ -20,6 +20,10 @@ public class ChatAPI {
 
 	protected static Logger logger;
 
+	// Cannot be instantiated
+	private ChatAPI() {}
+
+
 	/**
 	 * Gets the logger for ChatAPI
 	 * This will be the plugins logger by default or a
@@ -89,6 +93,9 @@ public class ChatAPI {
 
 	@Nullable
 	public static RegisteredChatAPIChannel getChannel(String name) {
+		if (name == null) {
+			return null;
+		}
 		for (RegisteredChatAPIChannel channel : ChatAPIHandler.getInstance().getRegisteredChannels()) {
 			if (channel.getMeta().getName().equals(name)) {
 				return channel;
@@ -102,6 +109,15 @@ public class ChatAPI {
 			}
 		}
 		return null;
+	}
+
+	@Nullable
+	public static RegisteredChatAPIChannel getDefaultChannel() {
+		return ChatAPIHandler.getInstance().getDefaultChannel();
+	}
+
+	public static void setDefaultChannel(RegisteredChatAPIChannel defaultChannel) {
+		ChatAPIHandler.getInstance().setDefaultChannel(defaultChannel);
 	}
 
 	public static void onEnable(Plugin plugin) {
@@ -128,11 +144,10 @@ public class ChatAPI {
 
 		Bukkit.getPluginManager().registerEvents(new Listener() {
 
-			@EventHandler
+			@EventHandler(priority = EventPriority.HIGH)
 			public void onPlayerChat(AsyncPlayerChatEvent event) {
 
 				// handle cancelled
-				// TODO: test
 				if (event.isCancelled()) {
 					return;
 				}
@@ -150,7 +165,7 @@ public class ChatAPI {
 				//final String message = chatAPIRawMessageSendEvent.getMessage();
 				final String message = event.getMessage();
 
-				ChatAPIHandler.getInstance().getPlayerChatData(sender).getChatMessageSendHandler().sendMessage(sender, message);
+				ChatAPIHandler.getInstance().getPlayerChatData(sender).getCurrentChannel().sendMessage(sender, message);
 
 			}
 
