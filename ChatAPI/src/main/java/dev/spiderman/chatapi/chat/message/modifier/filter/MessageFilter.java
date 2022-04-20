@@ -1,10 +1,9 @@
 package dev.spiderman.chatapi.chat.message.modifier.filter;
 
 import dev.spiderman.chatapi.chat.message.ChatMessage;
-import dev.spiderman.chatapi.chat.message.snippet.MessageSnippet;
+import dev.spiderman.chatapi.chat.message.MessageSnippet;
 
 import java.util.HashMap;
-import java.util.regex.Pattern;
 
 public class MessageFilter {
 

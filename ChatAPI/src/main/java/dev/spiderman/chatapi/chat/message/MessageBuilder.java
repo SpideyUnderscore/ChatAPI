@@ -1,7 +1,6 @@
 package dev.spiderman.chatapi.chat.message;
 
-import dev.spiderman.chatapi.chat.message.snippet.MessageSnippet;
-import dev.spiderman.chatapi.chat.message.snippet.content.TextContent;
+import dev.spiderman.chatapi.chat.message.snippetcontent.TextContent;
 import org.bukkit.entity.Player;
 
 public class MessageBuilder {

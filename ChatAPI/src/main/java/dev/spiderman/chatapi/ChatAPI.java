@@ -1,8 +1,6 @@
 package dev.spiderman.chatapi;
 
 import dev.spiderman.chatapi.chat.channel.RegisteredChatAPIChannel;
-import dev.spiderman.chatapi.event.chat.EnableChatInputModeEvent;
-import dev.spiderman.chatapi.event.chat.send.ChatAPIRawMessageSendEvent;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -94,6 +92,13 @@ public class ChatAPI {
 		for (RegisteredChatAPIChannel channel : ChatAPIHandler.getInstance().getRegisteredChannels()) {
 			if (channel.getMeta().getName().equals(name)) {
 				return channel;
+			}
+		}
+		for (RegisteredChatAPIChannel channel : ChatAPIHandler.getInstance().getRegisteredChannels()) {
+			for (String alias : channel.getMeta().getAliases()) {
+				if (alias.equals(name)) {
+					return channel;
+				}
 			}
 		}
 		return null;

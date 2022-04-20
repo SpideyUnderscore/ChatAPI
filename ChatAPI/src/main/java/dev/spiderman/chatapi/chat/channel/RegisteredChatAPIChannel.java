@@ -1,9 +1,8 @@
 package dev.spiderman.chatapi.chat.channel;
 
-import dev.spiderman.chatapi.chat.input.ChatInputHandler;
+import dev.spiderman.chatapi.chat.ChatInputHandler;
 import dev.spiderman.chatapi.chat.message.ChatMessage;
-import dev.spiderman.chatapi.chat.meta.ChannelMeta;
-import dev.spiderman.chatapi.chat.meta.SendMeta;
+import dev.spiderman.chatapi.chat.ChannelMeta;
 import org.bukkit.entity.Player;
 
 public class RegisteredChatAPIChannel implements ChatInputHandler {

@@ -1,22 +1,16 @@
 package dev.spiderman.chatapi.chat.message;
 
-import com.google.common.base.Splitter;
-import dev.spiderman.chatapi.chat.message.snippet.MessageSnippet;
-import dev.spiderman.chatapi.chat.message.snippet.content.EmailContent;
-import dev.spiderman.chatapi.chat.message.snippet.content.LinkContent;
-import dev.spiderman.chatapi.chat.message.snippet.content.MentionContent;
-import dev.spiderman.chatapi.chat.message.snippet.content.TextContent;
+import dev.spiderman.chatapi.chat.message.snippetcontent.EmailContent;
+import dev.spiderman.chatapi.chat.message.snippetcontent.LinkContent;
+import dev.spiderman.chatapi.chat.message.snippetcontent.MentionContent;
+import dev.spiderman.chatapi.chat.message.snippetcontent.TextContent;
 import net.md_5.bungee.api.chat.BaseComponent;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.entity.Player;
-import org.checkerframework.checker.units.qual.C;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.UUID;
 import java.util.regex.MatchResult;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;

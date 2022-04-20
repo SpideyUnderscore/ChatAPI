@@ -1,8 +1,7 @@
 package dev.spiderman.chatapi;
 
 import dev.spiderman.chatapi.chat.PlayerChatData;
-import dev.spiderman.chatapi.chat.meta.ChannelMeta;
-import dev.spiderman.chatapi.chat.meta.SendMeta;
+import dev.spiderman.chatapi.chat.ChannelMeta;
 import dev.spiderman.chatapi.chat.channel.RegisteredChatAPIChannel;
 import org.bukkit.entity.Player;
 

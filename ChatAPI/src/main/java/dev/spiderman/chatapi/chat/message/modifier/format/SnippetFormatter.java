@@ -1,10 +1,9 @@
 package dev.spiderman.chatapi.chat.message.modifier.format;
 
 import dev.spiderman.chatapi.chat.message.ChatMessage;
-import dev.spiderman.chatapi.chat.message.snippet.MessageSnippet;
-import dev.spiderman.chatapi.chat.message.snippet.content.EmailContent;
-import dev.spiderman.chatapi.chat.message.snippet.content.LinkContent;
-import dev.spiderman.chatapi.chat.message.snippet.content.TextContent;
+import dev.spiderman.chatapi.chat.message.MessageSnippet;
+import dev.spiderman.chatapi.chat.message.snippetcontent.EmailContent;
+import dev.spiderman.chatapi.chat.message.snippetcontent.LinkContent;
 import net.md_5.bungee.api.ChatColor;
 import org.jetbrains.annotations.NotNull;
 

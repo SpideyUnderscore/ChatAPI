@@ -1,7 +1,6 @@
 package dev.spiderman.chatapi.chat;
 
 import dev.spiderman.chatapi.ChatAPI;
-import dev.spiderman.chatapi.chat.input.ChatInputHandler;
 import org.bukkit.entity.Player;
 
 public class PlayerChatData {
