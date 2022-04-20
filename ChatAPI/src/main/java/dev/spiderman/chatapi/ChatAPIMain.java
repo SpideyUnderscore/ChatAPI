@@ -24,27 +24,6 @@ public final class ChatAPIMain extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		ChatAPI.onEnable(this);
-		getCommand("testcomp").setExecutor(new TestComponentCommand());
-
-		// test
-		Bukkit.broadcastMessage("]----- Enabled ChatAPI -----[");
-
-		new ChatAPIChannel("TEST")
-				.withAliases("TESTING", "THE_TEST")
-				.withFilter(new MessageFilter('*')
-						.replaces("asshole")
-						.replaces("idiot", StringReplacement.of("id**t")))
-				.formatsMessage(message -> new MessageFormatter(message).appendSenderName().append(": ").appendMessage().format())
-				.withSnippetFormatter(new SnippetFormatter()
-						.formatsText(messageSnippet -> messageSnippet.setColor(ChatColor.YELLOW))
-						.formatsLink(messageSnippet -> messageSnippet
-								.setColor(ChatColor.WHITE)
-								.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text(ChatColor.GRAY + "Click to open " + ChatColor.BLUE + messageSnippet.getContent().asString())))
-								.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, messageSnippet.getContent().asString()))))
-				.register();
-
-		Bukkit.broadcastMessage("]----- Tested ChatAPI -----[");
-
 	}
 
 	@Override
